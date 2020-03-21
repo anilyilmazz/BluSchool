@@ -1,0 +1,28 @@
+﻿@using BluSchool.Models;
+@{
+    ViewData["Title"] = "UserControl";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UserControl</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">User Name</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.UserName</td>
+            <td><button type="button" class="btn btn-primary">Ogretmen Yetkisi</button></td>
+            <td><button type="button" class="btn btn-info">Ogrenci Yetkisi</button></td>
+        </tr>
+        }
+        
+    </tbody>
+</table>
