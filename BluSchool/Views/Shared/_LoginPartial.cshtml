@@ -5,14 +5,16 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
- 
-        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba @UserManager.GetUserName(User)!</a>
 
-        <a type="submit" class="btn btn-link navbar-btn navbar-link" href="/Home/Logout">Logout</a>
+    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Merhaba @UserManager.GetUserName(User)!</a>
+
+    <a type="submit" class="btn btn-outline-primary" href="/Home/Logout">Cikis Yap</a>
 
 }
 else
-{   
-        <a asp-area="Identity" asp-page="/Account/Register">Register</a>
-        <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+{
+    <a class="btn btn-outline-primary" href="/Identity/Account/Register" role="button">Kayit Ol</a>
+
+    <a class="btn btn-outline-primary" href="/Identity/Account/Login" role="button">Giris Yap</a>
+
 }
