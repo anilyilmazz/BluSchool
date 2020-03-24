@@ -4,31 +4,35 @@
     Layout = "~/Views/Shared/SideBar.cshtml";
 }
 
-                <h2 style="font-size: 25px; text-align: center;">DERSLERİM</h2>
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col">Dersin Adı</th>
-                            <th scope="col">Bölümü</th>
-                            <th scope="col">Ders Düzeyi</th>
-                            <th scope="col">Derslik</th>
-                            <th scope="col">AKTS</th>
-                            <th scope="col">Yoklama Başlat</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="clickable-row">
-                            <td>Buraya ders adı gelecek</td>
-                            <td>bölüm</td>
-                            <td>düzey</td>
-                            <td>derslik</td>
-                            <td>AKTS</td>
-                            <td><a href=""><img src="~/images/bluetoothicon.png" style="width: 100px;"></a></td>
+<h2 style="font-size: 25px; text-align: center;">DERSLERİM</h2>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Dersin Adı</th>
+            <th scope="col">Bölümü</th>
+            <th scope="col">Ders Düzeyi</th>
+            <th scope="col">Derslik</th>
+            <th scope="col">AKTS</th>
+            <th scope="col">Yoklama Başlat</th>
+            <th scope="col">Guncelle</th>
+            <th scope="col">Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lesson in ViewData["lessonList"] as List<LessonModel>)
+        {
+        <tr class="clickable-row">
+            <td>@lesson.LessonName</td>
+            <td>@lesson.Department</td>
+            <td>@lesson.Degree</td>
+            <td>@lesson.ClassRoom</td>
+            <td>@lesson.Credit</td>
+            <td><a href=""><img src="~/images/bluetoothicon.png" style="width: 100px;"></a></td>     
+            <td><a class="btn btn-primary" href="/Teacher/update/@lesson.Id">Guncelle</a></td>
+            <td><a class="btn btn-success" href="/Teacher/delete/@lesson.Id">Sil</a></td>
 
-                        </tr>
-                        </tbody>
-                    </table>
-            </div>
-            </div>
-        </div>
+        </tr>
+        }
+    </tbody>
+</table>
 

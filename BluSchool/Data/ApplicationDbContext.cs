@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BluSchool.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -13,5 +14,7 @@ namespace BluSchool.Data
             : base(options)
         {
         }
+
+        public DbSet<LessonModel> Lessons { get; set; }
     }
 }
