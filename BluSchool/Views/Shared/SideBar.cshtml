@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "SideBar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="width: 19rem;">
+                    <img src="~/images/teacher.png" style="width: 10rem;" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">HOŞGELDİNİZ!</h5>
+                        <p class="card-text">--Buraya veritabanından hocanın adı ve email adresi gelecek--</p>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action active">
+                                Derslerim
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-success">Danışmanı Olduğum Öğrenciler</a>
+                            <a href="/teacher/createlesson" class="list-group-item list-group-item-warning">Ders Ekle/Çıkar</a>
+                            <a href="#" class="list-group-item list-group-item-danger">Sınıf Listesi</a>
+                        </div><br>
+                        <a href="#" class="btn btn-danger">Çıkış Yap</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8" style=" padding-top: 50px;">
+                @RenderBody()
+
+                </div>
+            </div>
+        </div>

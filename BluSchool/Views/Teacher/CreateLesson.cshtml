@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "CreateLesson";
+    Layout = "~/Views/Shared/SideBar.cshtml";
+}
+
+
+
+<div class="alert alert-warning" role="alert">
+    Ders eklemek için alanları doldurunuz.
+</div>
+<form>
+    <div class="form-row">
+        <div class="col">
+            <label>Dersin Adı:</label><input type="text" class="form-control" placeholder="Dersin Adını Giriniz...">
+        </div>
+        <div class="col">
+            <label>Derslik:</label> <input type="text" class="form-control" placeholder="Derslik...">
+        </div>
+    </div>
+    <hr>
+    <div class="form-row">
+        <div class="col">
+            <label for="bolum">Bölümününüzü seçiniz:</label>
+            <select type="text" class="form-control">
+                <option value="BilgMuh">Bilgisayar Mühendisliği</option>
+                <option value="GidaMuh">Gıda Mühendisliği</option>
+                <option value="ElektrikMuh">Elektrik Mühendisliği</option>
+                <option value="GenMuh">Genetik ve Biyomühendislik</option>
+                <option value="MakMuh">Makine Mühendisliği</option>
+            </select>
+        </div>
+        <div class="col">
+            <label for="duzey">Ders Düzeyini seçiniz:</label>
+            <select type="text" class="form-control">
+                <option value="lisans">Lisans</option>
+                <option value="onlisans">Ön Lisans</option>
+                <option value="yuklisans">Yüksek Lisans</option>
+                <option value="doktora">Doktora</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+    <div class="form-row">
+        <div class="col">
+            <label>Kredisi(AKTS):</label><input type="text" class="form-control" placeholder="Dersin Kredisini Giriniz...">
+        </div>
+        <div class="col">
+            <label>Dersi Alan Öğrenci Sayısı:</label> <input type="text" class="form-control" placeholder="Öğrenci sayısını giriniz...">
+        </div>
+    </div><br>
+    <button type="submit" class="btn btn-warning">Dersi Ekle</button>
+
+</form>
+   

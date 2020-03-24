@@ -15,5 +15,9 @@ namespace BluSchool.Controllers
             var UserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             return View();
         }
+        public IActionResult CreateLesson()
+        {
+            return View();
+        }
     }
 }
