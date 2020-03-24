@@ -41,7 +41,17 @@ namespace BluSchool.Controllers
             newLesson.TeacherId = userId;
             _ctx.Lessons.Add(newLesson);
             _ctx.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index"); //ders ekledikten sonra index'e yönlendir
+        }
+      
+        public IActionResult DeleteLesson(int id)
+        {
+            var delete_lesson = new LessonModel();
+            delete_lesson.Id = id;
+            _ctx.Lessons.Attach(delete_lesson);
+            _ctx.Lessons.Remove(delete_lesson);
+            _ctx.SaveChanges();
+            return RedirectToAction("Index"); //ders silindikten sonra index'e yönlendir.
         }
     }
 }
