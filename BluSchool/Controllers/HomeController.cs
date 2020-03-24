@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using BluSchool.Areas.Identity.Pages.Account;
 using Microsoft.Extensions.Logging;
+using System.Security.Claims;
 
 namespace BluSchool.Controllers
 {
@@ -34,9 +35,19 @@ namespace BluSchool.Controllers
             _logger = logger;
 
         }
+
         public IActionResult Index()
         {
-            return View();
+            var UserId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if(UserId != null)
+            {
+                return Redirect("/teacher/index");
+            }
+            else
+            {
+                return View();
+            }
+           
         }
 
        
