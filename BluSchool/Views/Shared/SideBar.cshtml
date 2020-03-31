@@ -1,9 +1,11 @@
 ﻿
+@using Microsoft.AspNetCore.Identity
 @{
-    
+
     Layout = "~/Views/Shared/_Layout.cshtml";
-   
+
 }
+@inject UserManager<IdentityUser> UserManager
 
 <div class="container">
     <div class="row">
@@ -12,7 +14,7 @@
                 <img src="~/images/teacher.png" style="width: 10rem;" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">HOŞGELDİNİZ!</h5>
-                    <p class="card-text">-mail gelecek-</p>
+                    <p class="card-text">Merhaba @UserManager.GetUserName(User)</p>
                     <div class="list-group">
                         <a href="/teacher/index" class="list-group-item list-group-item-action active">
                             Derslerim
