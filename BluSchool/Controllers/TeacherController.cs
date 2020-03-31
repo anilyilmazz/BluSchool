@@ -70,13 +70,14 @@ namespace BluSchool.Controllers
             var update_lesson = new LessonModel();
             update_lesson = _ctx.Lessons.Where(x => x.Id == id).FirstOrDefault();
             ViewData["update"] = update_lesson;
-            update_lesson.LessonName = model.LessonName;
+            update_lesson.LessonName = model.LessonName; 
             update_lesson.ClassRoom = model.ClassRoom;
             update_lesson.Department = model.Department;
             update_lesson.Degree = model.Degree;
             update_lesson.Credit = model.Credit;
             update_lesson.StudentCount = model.StudentCount;
             _ctx.SaveChanges();
+            _ctx.Lessons.Update(update_lesson);
             return RedirectToAction("Index");
             
 

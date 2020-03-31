@@ -5,10 +5,8 @@
 }
 @using (Html.BeginForm("UpdateLesson"))
 {
-    <h1>BURASI COKAMELLI</h1>
     @Model.Id
-    @Model.Department
-    <img src="https://listelist.com/wp-content/uploads/2015/08/vampire-angry-cat-loki-25.jpg" width="100" height="100"/>
+   
     <div class="alert alert-danger" role="alert">
         Ders güncelleştirmek için alanları doldurunuz.
     </div>
@@ -16,17 +14,19 @@
     <form action="/Teacher/UpdateLesson" method="POST">
         <div class="form-row">
             <div class="col">
-                <label>Dersin Adı:</label><input type="text" class="form-control" name="model.LessonName">
+                <label> ID </label> <input type="text" value="@Model.Id" name="Id" />
+
+                <label>Dersin Adı:</label><input type="text" value="@Model.LessonName" class="form-control" name="model.LessonName">
             </div>
             <div class="col">
-                <label>Derslik:</label> <input type="text" class="form-control" placeholder="Derslik..." name="model.ClassRoom">
+                <label>Derslik:</label> <input type="text" value="@Model.ClassRoom" class="form-control" placeholder="Derslik..." name="model.ClassRoom">
             </div>
         </div>
         <hr>
         <div class="form-row">
             <div class="col">
                 <label for="bolum">Bölümününüzü seçiniz:</label>
-                <select type="text" class="form-control" name="model.Department">
+                <select type="text" class="form-control" value="@Model.Department" name="model.Department">
                     <option value="Bilgisayar Muh">Bilgisayar Mühendisliği</option>
                     <option value="Gida Muh">Gıda Mühendisliği</option>
                     <option value="Elektrik Muh">Elektrik Mühendisliği</option>
@@ -36,7 +36,7 @@
             </div>
             <div class="col">
                 <label for="duzey">Ders Düzeyini seçiniz:</label>
-                <select type="text" class="form-control" name="model.Degree">
+                <select type="text" class="form-control" value="@Model.Degree"name="model.Degree">
                     <option value="Lisans">Lisans</option>
                     <option value="On Lisans">Ön Lisans</option>
                     <option value="Yuksek Lisans">Yüksek Lisans</option>
@@ -47,10 +47,10 @@
         <hr>
         <div class="form-row">
             <div class="col">
-                <label>Kredisi(AKTS):</label><input type="text" class="form-control" placeholder="Dersin Kredisini Giriniz..." name="model.Credit">
+                <label>Kredisi(AKTS):</label><input type="text" value="@Model.Credit" class="form-control" placeholder="Dersin Kredisini Giriniz..." name="model.Credit">
             </div>
             <div class="col">
-                <label>Dersi Alan Öğrenci Sayısı:</label> <input type="text" class="form-control" placeholder="Öğrenci sayısını giriniz..." name="model.StudentCount">
+                <label>Dersi Alan Öğrenci Sayısı:</label> <input type="text" value="@Model.StudentCount" class="form-control" placeholder="Öğrenci sayısını giriniz..." name="model.StudentCount">
             </div>
         </div>
         <br>
