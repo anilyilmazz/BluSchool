@@ -54,9 +54,12 @@ namespace BluSchool.Controllers
             _ctx.SaveChanges();
             return RedirectToAction("Index"); //ders silindikten sonra index'e yönlendir.
         }
-        public IActionResult UpdateLesson()
+        public IActionResult UpdateLesson(int id)
         {
-            return View();
+            //ID ALIYORUM
+            var updatedLesson = _ctx.Lessons.Where(x => x.Id == id).FirstOrDefault();
+            //veritabanindan buldum simdi onu html e gonderecegim
+            return View(updatedLesson);
         }
 
     
