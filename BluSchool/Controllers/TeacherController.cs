@@ -12,6 +12,7 @@ namespace BluSchool.Controllers
     public class TeacherController : Controller
     {
         private ApplicationDbContext _ctx;
+       
 
         public TeacherController(ApplicationDbContext _ctx)
         {
@@ -53,5 +54,33 @@ namespace BluSchool.Controllers
             _ctx.SaveChanges();
             return RedirectToAction("Index"); //ders silindikten sonra index'e yönlendir.
         }
+        public IActionResult UpdateLesson()
+        {
+            return View();
+        }
+
+    
+        [HttpPost]
+        public IActionResult UpdateLesson(LessonModel model, int id)
+        {
+
+            var update_lesson = new LessonModel();
+            update_lesson = _ctx.Lessons.Where(x => x.Id == id).FirstOrDefault();
+            ViewData["update"] = update_lesson;
+            update_lesson.LessonName = model.LessonName;
+            update_lesson.ClassRoom = model.ClassRoom;
+            update_lesson.Department = model.Department;
+            update_lesson.Degree = model.Degree;
+            update_lesson.Credit = model.Credit;
+            update_lesson.StudentCount = model.StudentCount;
+            _ctx.SaveChanges();
+            return RedirectToAction("Index");
+            
+
+        }
+
+           
+  
+ 
+        }
     }
-}

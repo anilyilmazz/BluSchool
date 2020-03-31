@@ -1,0 +1,59 @@
+﻿@model LessonModel
+@{
+    ViewData["Title"] = "UpdateLesson";
+    Layout = "~/Views/Shared/SideBar.cshtml";
+}
+@using (Html.BeginForm("UpdateLesson"))
+{
+    @Html.HiddenFor(x => x.Id)
+ 
+  
+    <div class="alert alert-danger" role="alert">
+        Ders güncelleştirmek için alanları doldurunuz.
+    </div>
+    <form action="/Teacher/UpdateLesson" method="POST">
+        <div class="form-row">
+            <div class="col">
+
+                <label>Dersin Adı:</label><input type="text" class="form-control" name="model.LessonName"> 
+            </div>
+            <div class="col">
+                <label>Derslik:</label> <input type="text" class="form-control" placeholder="Derslik..." name="model.ClassRoom">
+            </div>
+        </div>
+        <hr>
+        <div class="form-row">
+            <div class="col">
+                <label for="bolum">Bölümününüzü seçiniz:</label>
+                <select type="text" class="form-control" name="model.Department">
+                    <option value="Bilgisayar Muh">Bilgisayar Mühendisliği</option>
+                    <option value="Gida Muh">Gıda Mühendisliği</option>
+                    <option value="Elektrik Muh">Elektrik Mühendisliği</option>
+                    <option value="Genetik Muh">Genetik ve Biyomühendislik</option>
+                    <option value="Makine Muh">Makine Mühendisliği</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="duzey">Ders Düzeyini seçiniz:</label>
+                <select type="text" class="form-control" name="model.Degree">
+                    <option value="Lisans">Lisans</option>
+                    <option value="On Lisans">Ön Lisans</option>
+                    <option value="Yuksek Lisans">Yüksek Lisans</option>
+                    <option value="Doktora">Doktora</option>
+                </select>
+            </div>
+        </div>
+        <hr>
+        <div class="form-row">
+            <div class="col">
+                <label>Kredisi(AKTS):</label><input type="text" class="form-control" placeholder="Dersin Kredisini Giriniz..." name="model.Credit">
+            </div>
+            <div class="col">
+                <label>Dersi Alan Öğrenci Sayısı:</label> <input type="text" class="form-control" placeholder="Öğrenci sayısını giriniz..." name="model.StudentCount">
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-warning" style="width: 100%;">Dersi Güncelle</button>
+    </form>
+
+}
